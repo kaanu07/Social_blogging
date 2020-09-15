@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Welcome to star social!</h1>
+
+
+    <div class="container">
+      {% for message in messages %}
+
+                    <div class="alert alert-success">
+                        <a class="close"  data-dismiss="alert">×</a>
+
+                        {{ message }}
+
+                    </div>
+            {% endfor %}
+      <form method="post" action="">
+        {% csrf_token %}
+    <legend>What is Your Favorite Pet?</legend>
+    <input type="checkbox" name="favorite_pet" value="1" id='1' >Cats<br>
+    <input type="checkbox" name="favorite_pet" value="2" id='2' >Dogs<br>
+    <input type="checkbox" name="favorite_pet" value="3" id='3' >Birds<br>
+        <br>
+    <input type="submit" value="Submit now">
+</form>
+
+    </div>
+{% endblock %}
